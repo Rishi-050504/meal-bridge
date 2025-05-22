@@ -1,0 +1,13 @@
+.home-container {
+  padding: 40px;
+  text-align: left;
+  background-color: #e6e6e6;
+  min-height: 80vh;
+}
+
+.bg-image-placeholder {
+  font-size: 24px;
+  font-style: italic;
+  color: #999;
+  margin-top: 40px;
+}
