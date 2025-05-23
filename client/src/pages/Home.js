@@ -56,7 +56,7 @@ const Home = () => {
           </p>
 
           <div className="home-buttons">
-            <button className="btn donate-btn" onClick={() => navigate('/donor')}>
+            <button className="btn donate-btn" onClick={() => navigate('/donate')}>
               Donate
             </button>
             <button className="btn take-btn" onClick={() => navigate('/donations')}>
