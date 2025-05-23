@@ -1,56 +1,86 @@
-/* Global reset - ideally in a global CSS or index.css */
-html, body {
+/* html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* prevents scroll */
+  overflow: hidden;
   height: 100%;
   width: 100%;
+  background-color: #EAEFEF;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-/* Background wrapper */
 .home-bg {
-  height: 100vh;  /* full viewport height */
-  width: 100vw;   /* full viewport width */
-  background-image: url('https://images.pexels.com/photos/2176032/pexels-photo-2176032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden; /* prevent scrolling inside */
-  font-family: 'Josefin Sans', sans-serif;
-  color: #333;
-  display: flex;          /* flex to center content vertically and horizontally */
+  height: 100vh;
+  width: 100vw;
+  background-color: #B8CFCE;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Content container */
 .home-container {
   max-width: 800px;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.3); /* lighter white with low opacity */
-  border-radius: 10px;
-  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
   text-align: center;
-  font-family: 'Playfair Display', serif;
-  overflow: hidden;
-  max-height: 90vh;
+  color: #333446;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   overflow-y: auto;
 }
 
-
 .main-heading {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: bold;
-  color: #222;
   margin-bottom: 1rem;
   font-family: 'Playfair Display', serif;
+  color: #333446;
 }
 
 .poem {
   font-family: 'Dancing Script', cursive;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin: 1.5rem 0;
-  color: #111;
-  font-weight: 550;
+  color: #7F8CAA;
+  font-weight: 600;
   line-height: 1.6;
+}
+
+.home-container p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333446;
+} */
+
+
+.home-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.donate-btn {
+  background-color: #7F8CAA;
+  color: #fff;
+}
+
+.take-btn {
+  background-color: #333446;
+  color: #fff;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
