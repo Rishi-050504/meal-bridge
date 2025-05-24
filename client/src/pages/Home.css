@@ -1,17 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
   height: 100%;
   width: 100%;
-  background-color: #EAEFEF;
+  background-color: #edede9;
   font-family: 'Josefin Sans', sans-serif;
 }
 
 .home-bg {
   height: 100vh;
   width: 100vw;
-  background-color: #B8CFCE;
+  background-color: #d6ccc2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +27,7 @@ html, body {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 12px;
   text-align: center;
-  color: #333446;
+  color: #5e5048;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   overflow-y: auto;
 }
@@ -33,14 +37,14 @@ html, body {
   font-weight: bold;
   margin-bottom: 1rem;
   font-family: 'Playfair Display', serif;
-  color: #333446;
+  color: #5e5048;
 }
 
 .poem {
   font-family: 'Dancing Script', cursive;
   font-size: 1.4rem;
   margin: 1.5rem 0;
-  color: #7F8CAA;
+  color: #a58d7f;
   font-weight: 600;
   line-height: 1.6;
 }
@@ -48,9 +52,8 @@ html, body {
 .home-container p {
   font-size: 1rem;
   line-height: 1.5;
-  color: #333446;
+  color: #5e5048;
 }
-
 
 .home-buttons {
   margin-top: 2rem;
@@ -71,12 +74,12 @@ html, body {
 }
 
 .donate-btn {
-  background-color: #7F8CAA;
+  background-color: #d5bdaf;
   color: #fff;
 }
 
 .take-btn {
-  background-color: #333446;
+  background-color: #a58d7f;
   color: #fff;
 }
 

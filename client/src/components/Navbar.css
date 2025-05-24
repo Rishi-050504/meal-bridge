@@ -4,7 +4,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #EAEFEF;
+  background-color: #edede9;
   font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -13,7 +13,7 @@ html, body {
   align-items: center;
   justify-content: space-between;
   padding: 18px 40px;
-  background-color: #7F8CAA;
+  background-color: #d6ccc2;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -32,7 +32,7 @@ html, body {
 .icon-circle {
   width: 44px;
   height: 44px;
-  background-color: #333446;
+  background-color: #d5bdaf;
   border-radius: 50%;
   color: white;
   display: flex;
@@ -52,7 +52,7 @@ html, body {
 .brand-name {
   font-family: 'Pacifico', cursive;
   font-size: 32px;
-  color: #333446;
+  color: #5e5048;
   letter-spacing: 2px;
   flex: 1;
   text-align: center;
@@ -68,7 +68,7 @@ html, body {
 }
 
 .navbar-links a {
-  color: #EAEFEF;
+  color: #5e5048;
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
@@ -76,7 +76,7 @@ html, body {
 }
 
 .navbar-links a:hover {
-  color: #B8CFCE;
+  color: #a58d7f;
   transform: scale(1.1);
   text-decoration: underline;
 }

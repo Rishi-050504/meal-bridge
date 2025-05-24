@@ -25,7 +25,7 @@ const About = () => {
       </section>
 
       <section className="overview">
-        <h3>Project Overview</h3>
+        <h3>Vision</h3>
         <p>
           Meal Bridge is a community-driven food donation website. It enables individuals with excess
           food to share it with those in need. Whether it's a household or a local event with leftovers,
