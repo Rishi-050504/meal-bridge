@@ -1,0 +1,93 @@
+.help-layout {
+  display: flex;
+  padding: 40px;
+  gap: 40px;
+  background-color: #101010;
+  color: white;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.faq-section {
+  flex: 1;
+}
+
+.faq-section h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.faq-item {
+  margin-bottom: 16px;
+  border-bottom: 1px solid #444;
+}
+
+.faq-question {
+  width: 100%;
+  background: #2a2a2a;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  border: none;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.faq-answer {
+  padding: 12px;
+  background-color: #1e1e1e;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.contact-section {
+  flex: 1;
+  background: #fff;
+  color: black;
+  padding: 30px;
+  border-radius: 30px 30px 30px 30px;
+}
+
+.contact-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.intro-text {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #d1a311;
+  border: none;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.contact-form button:hover {
+  background-color: #b8910f;
+}
