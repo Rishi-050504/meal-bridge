@@ -41,7 +41,7 @@ const Navbar = () => {
       <div className="navbar-links">
         <Link to="/">Home</Link>          {/* 👈 New Home Link */}
         <Link to="/about">About</Link>
-        <Link to="/donate">Donate</Link>
+        <Link to="/donate">Contribute</Link>
         <Link to="/donations">Donations</Link>
         <Link to="/admin">Admin</Link>
         <Link to="/help">Help</Link>
