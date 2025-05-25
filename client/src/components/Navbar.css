@@ -19,9 +19,9 @@ html, body {
   top: 0;
   width: 100vw;
   z-index: 100;
-  border-radius: 0 0 12px 12px;
   box-sizing: border-box;
 }
+
 
 .navbar-left {
   display: flex;
@@ -50,7 +50,7 @@ html, body {
 }
 
 .brand-name {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Lucida Handwriting', Cursive;
   font-size: 32px;
   color: #e0e1dd;
   letter-spacing: 2px;

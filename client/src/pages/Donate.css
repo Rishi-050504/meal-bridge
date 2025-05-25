@@ -1,10 +1,33 @@
+.donate-background {
+  position: relative;
+  min-height: 100vh;
+  background: url('https://as1.ftcdn.net/v2/jpg/03/36/22/88/1000_F_336228803_tO6PQ44dTyjWKGMZFM7l6OawBDoamMpV.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.donate-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(13, 27, 42, 0.6); /* #0d1b2a with 0.6 opacity */
+  z-index: 0;
+}
+
 .donate-container {
-  background-color: #f3f3f3;
+  position: relative;
+  z-index: 1;
+  background-color: rgba(224, 225, 221, 0.7); /* translucent #e0e1dd */
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 15px;
   max-width: 800px;
-  margin: auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
 }
 
 .donate-form {
@@ -20,6 +43,7 @@
 
 label {
   font-weight: bold;
+  color: #1b263b;
   margin-bottom: 5px;
 }
 
@@ -30,9 +54,11 @@ input[type="datetime-local"],
 select,
 textarea {
   padding: 10px;
-  border: 1px solid #aaa;
+  border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
+  background-color: #e0e1dd;
+  color: #0d1b2a;
 }
 
 textarea {
@@ -54,7 +80,8 @@ textarea {
 .add-item-btn {
   width: fit-content;
   margin-top: 10px;
-  background-color: #ddd;
+  background-color: #778da9;
+  color: white;
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
@@ -62,16 +89,17 @@ textarea {
 }
 
 .submit-btn {
-  background-color: #7a6c6c;
+  background-color: #415a77;
   color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
+  padding: 12px 20px;
+  border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
   width: 200px;
   align-self: center;
 }
+
 .image-preview-grid {
   display: flex;
   flex-wrap: wrap;
