@@ -2,15 +2,28 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow: auto;         /* ✅ Enable scrolling */
-  min-height: 100vh;      /* ✅ Ensure full height for scrolling */
+  min-height: 100vh;
+  height: 100%;
   font-family: 'Playfair Display', serif;
   background-color: #EAEFEF;
   box-sizing: border-box;
+  overflow: hidden; /* Prevent double scrollbars */
 }
 
 #root {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 20px;
 }
