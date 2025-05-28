@@ -1,0 +1,65 @@
+.auth-layout {
+  display: flex;
+  height: 100vh;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.auth-left {
+  flex: 1;
+  background-image: url('https://source.unsplash.com/800x800/?food,donation');
+  background-size: cover;
+  background-position: center;
+}
+
+.auth-right {
+  flex: 1.5;
+  background-color: #f1efec;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+}
+
+.auth-right h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #123458;
+}
+
+.auth-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-right input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-right button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #123458;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-right button:hover {
+  background-color: #0e2a45;
+}
+
+.link-text {
+  margin-top: 15px;
+  color: #123458;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.link-text:hover {
+  text-decoration: underline;
+}
