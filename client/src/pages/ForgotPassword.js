@@ -13,13 +13,25 @@ const ForgotPassword = () => {
 
   return (
     <div className="auth-layout">
-      <div className="auth-left"></div>
-      <div className="auth-right">
-        <h2>Forgot Password</h2>
-        <form onSubmit={handleSubmit}>
-          <input type="email" placeholder="Enter your email" onChange={e => setEmail(e.target.value)} required />
-          <button type="submit">Send Reset Link</button>
-        </form>
+      <div className="auth-wrapper">
+        <div className="auth-left" />
+        <div className="auth-right">
+          <h2>Forget something?</h2>
+          <p>
+            Enter your email below to receive password reset instructions.<br />
+            Didn’t receive instructions? <a href="#">Try different method</a>
+          </p>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              required
+            />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
       </div>
     </div>
   );
