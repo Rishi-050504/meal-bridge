@@ -1,0 +1,90 @@
+.profile-container {
+  padding: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.dropdown-wrapper {
+  position: relative;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.dropbtn {
+  background: transparent;
+  font-size: 24px;
+  border: none;
+  color: #123458;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background-color: #F1EFEC;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  color: #030303;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.profile-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-photo-box {
+  text-align: center;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid #123458;
+}
+
+.bio-box, .stars-box {
+  background-color: #F1EFEC;
+  padding: 16px;
+  margin: 20px;
+  width: 60%;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px #d4c9be;
+  text-align: center;
+}
+
+.signout-btn {
+  margin-top: 40px;
+  background-color: #123458;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}

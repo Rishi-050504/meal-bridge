@@ -15,7 +15,7 @@ const sampleDonations = [
       { name: 'Rice', quantity: '5 kg' },
       { name: 'Canned Beans', quantity: '10 cans' },
     ],
-    dateTime: '2025-05-25 19:56',
+    dateTime: '2025-06-25 19:56',
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const sampleDonations = [
       { name: 'Bread', quantity: '2 loaves' },
       { name: 'Milk', quantity: '1 liter' },
     ],
-    dateTime: '2025-05-25 10:00',
+    dateTime: '2025-06-25 10:00',
   },
 ];
 
