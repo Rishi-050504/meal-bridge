@@ -1,66 +1,154 @@
-.about-page {
-  position: relative;
-  min-height: 100vh;
-  background-image: url('https://images.pexels.com/photos/8668967/pexels-photo-8668967.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden; /* Disable both horizontal and vertical scrolling */
+  }
 
-.about-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(13, 27, 42, 0.6); /* #0d1b2a with 0.6 opacity */
-  z-index: 1;
-}
+  .about-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('https://images.pexels.com/photos/8668967/pexels-photo-8668967.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
-.about-container {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  gap: 20px;
-  padding: 30px;
-}
 
-.mission,
-.overview,
-.why,
-.how {
-  background-color: rgba(224, 225, 221, 0.9); /* #e0e1dd with opacity */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  color: #0d1b2a; /* text color */
-}
+  .about-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 27, 42, 0.6); /* dark translucent overlay */
+    z-index: 1;
+  }
 
-.mission h2,
-.overview h3,
-.why h3,
-.how h3 {
-  margin-top: 0;
-  color: #1b263b;
-}
-
-.mission p,
-.overview p,
-.why p,
-.how p {
-  color: #415a77;
-}
-
-@media (min-width: 768px) {
   .about-container {
-    grid-template-columns: 1fr 1fr;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 24px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
-
-  .mission {
-    grid-column: span 2;
+  .mission h2{
+    font-family: Graviola;
   }
-
+  .mission,
+  .overview,
+  .why,
   .how {
-    grid-column: span 2;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 25px 25px 25px 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #0d1b2a;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-}
+
+  /* Side fill animation */
+  .mission::before,
+  .overview::before,
+  .why::before,
+  .how::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.2;
+    transition: width 0.4s ease;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+  .mission::before {
+    background-color: #9d8854;
+  }
+  .overview::before {
+    background-color: #219ebc;
+  }
+  .why::before {
+    background-color: #c72727;
+  }
+  .how::before {
+    background-color: #975384;
+  }
+
+  .mission:hover::before,
+  .overview:hover::before,
+  .why:hover::before,
+  .how:hover::before {
+    width: 100%;
+  }
+
+  .mission:hover,
+  .overview:hover,
+  .why:hover,
+  .how:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Ensure content stays on top of ::before */
+  .mission *,
+  .overview *,
+  .why *,
+  .how * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .mission h2,
+  .overview h3,
+  .why h3,
+  .how h3 {
+    margin-top: 0;
+    color: #1b263b;
+    font-size: 1.8rem;
+  }
+
+  .mission p,
+  .overview p,
+  .why p,
+  .how p {
+    color: #415a77;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .about-container {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .mission {
+      grid-column: span 2;
+    }
+
+    .how {
+      grid-column: span 2;
+    }
+  }
+  /* .mission,
+  .overview,
+  .why,
+  .how {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.7); /* slightly translucent */
+    /* padding: 25px 25px 25px 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #0d1b2a;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  } */ 

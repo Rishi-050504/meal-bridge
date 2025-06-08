@@ -1,98 +1,4 @@
-/* .auth-layout {
-  display: flex;
-  height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f7;
-}
-
-.auth-left {
-  flex: 1;
-  background-image: url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 0 20px 20px 0;
-  position: relative;
-}
-
-.auth-left::after {
-  content: "Capturing Moments,\A Creating Memories";
-  position: absolute;
-  bottom: 50px;
-  left: 50px;
-  font-size: 1.5rem;
-  color: white;
-  white-space: pre-wrap;
-  font-weight: 600;
-}
-
-.auth-right {
-  flex: 1;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 40px 60px;
-  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.05);
-}
-
-.auth-right h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #2d2d2d;
-}
-
-.auth-right form {
-  display: flex;
-  flex-direction: column;
-}
-
-.auth-right input {
-  padding: 12px 16px;
-  margin: 10px 0;
-  font-size: 16px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.auth-right input:focus {
-  border-color: #7b5cf1;
-}
-
-.auth-right button {
-  margin-top: 20px;
-  padding: 12px;
-  background-color: #7b5cf1;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.auth-right button:hover {
-  background-color: #6846e3;
-}
-
-.link-text {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #666;
-}
-
-.link-text a {
-  color: #7b5cf1;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.link-text a:hover {
-  text-decoration: underline;
-} */
-/* Force full height and remove all scrollbars */
+/* Full screen layout */
 html, body {
   margin: 0;
   padding: 0;
@@ -101,32 +7,30 @@ html, body {
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Main container fills viewport */
+/* Container that splits screen */
 .signup-container {
   display: flex;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
 }
 
-/* Left side with image background */
+/* Left side with background image and text */
 .signup-left {
   flex: 1;
-  position: relative;
   background: url('https://images.pexels.com/photos/30895359/pexels-photo-30895359/free-photo-of-elegant-breakfast-with-croissants-and-coffee.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover no-repeat;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 40px;
   color: white;
-  overflow: hidden;
 }
 
 .signup-left::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* overlay */
+  background-color: rgba(0, 0, 0, 0.65); /* dark overlay */
   z-index: 0;
 }
 
@@ -134,7 +38,7 @@ html, body {
 .signup-left p {
   position: relative;
   z-index: 1;
-  margin: 0 0 20px 0;
+  margin: 0 0 20px;
 }
 
 .signup-left h1 {
@@ -145,22 +49,23 @@ html, body {
 .signup-left p {
   font-size: 1rem;
   max-width: 400px;
+  line-height: 1.5;
 }
 
 /* Right side with form */
 .signup-right {
   flex: 1;
-  padding: 40px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden;
+  padding: 40px 60px;
 }
 
 .signup-right h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 10px;
+  color: #123458;
 }
 
 .signup-right .brand {
@@ -170,8 +75,19 @@ html, body {
 .member-text {
   margin-bottom: 30px;
   font-size: 0.95rem;
+  color: #666;
 }
 
+.member-text a {
+  color: #3c4fff;
+  text-decoration: none;
+}
+
+.member-text a:hover {
+  text-decoration: underline;
+}
+
+/* Form styling */
 .signup-right form {
   display: flex;
   flex-direction: column;
@@ -185,8 +101,15 @@ html, body {
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
 }
 
+.signup-right input:focus {
+  border-color: #3c4fff;
+}
+
+/* Button styling */
 .primary-btn {
   background-color: #3c4fff;
   color: white;
@@ -200,5 +123,5 @@ html, body {
 }
 
 .primary-btn:hover {
-  background-color: #2f3ddb;
+  background-color: #2a35c9;
 }

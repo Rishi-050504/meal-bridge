@@ -17,14 +17,24 @@
 
 // module.exports = mongoose.model('User', userSchema);
 
+// const mongoose = require('mongoose');
+
+// const userSchema = new mongoose.Schema({
+//   name: String,
+//   email: { type: String, unique: true },
+//   password: String,
+//   mobile: { type: String, unique: true }, // Primary key-like field
+//   locality: String,
+// }, { timestamps: true });
+
+// module.exports = mongoose.model('User', userSchema);
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-  name: String,
-  email: { type: String, unique: true },
-  password: String,
-  mobile: { type: String, unique: true }, // Primary key-like field
-  locality: String,
-}, { timestamps: true });
+  name: { type: String, required: true },
+  mobile: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+});
 
 module.exports = mongoose.model('User', userSchema);
