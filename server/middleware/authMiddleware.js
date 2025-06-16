@@ -1,44 +1,48 @@
+
 // const jwt = require('jsonwebtoken');
+// const User = require('../models/User');
 
-// const authMiddleware = (req, res, next) => {
-//   const token = req.header('Authorization');
-//   if (!token) return res.status(401).json({ msg: 'No token, access denied' });
+// const protect = async (req, res, next) => {
+//   let token;
+//   if (
+//     req.headers.authorization &&
+//     req.headers.authorization.startsWith('Bearer')
+//   ) {
+//     try {
+//       token = req.headers.authorization.split(' ')[1];
+//       const decoded = jwt.verify(token, process.env.JWT_SECRET);
+//       req.user = await User.findById(decoded.userId).select('-password');
+//       next();
+//     } catch (err) {
+//       return res.status(401).json({ message: 'Not authorized, token failed' });
+//     }
+//   }
 
-//   try {
-//     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-//     req.user = decoded.id;
-//     next();
-//   } catch (err) {
-//     res.status(401).json({ msg: 'Invalid token' });
+//   if (!token) {
+//     return res.status(401).json({ message: 'Not authorized, no token' });
 //   }
 // };
 
-// module.exports = authMiddleware;
+// module.exports = { protect };
 
-// middleware/authMiddleware.js
+
+
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 const protect = async (req, res, next) => {
   let token;
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith('Bearer')
-  ) {
+  if (req.headers.authorization?.startsWith('Bearer')) {
     try {
       token = req.headers.authorization.split(' ')[1];
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      req.user = await User.findById(decoded.userId).select('-password');
-      next();
+      req.user = await User.findById(decoded.id).select('-password');
+      return next();
     } catch (err) {
-      return res.status(401).json({ message: 'Not authorized, token failed' });
+      return res.status(401).json({ message: 'Token verification failed' });
     }
   }
-
-  if (!token) {
-    return res.status(401).json({ message: 'Not authorized, no token' });
-  }
+  res.status(401).json({ message: 'No token, not authorized' });
 };
 
 module.exports = { protect };
-
