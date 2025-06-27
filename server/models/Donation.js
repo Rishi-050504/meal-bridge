@@ -1,20 +1,19 @@
 const mongoose = require('mongoose');
 
+const itemSchema = new mongoose.Schema({
+  name: String,
+  quantity: String,
+});
+
 const donationSchema = new mongoose.Schema({
-  donor: {
-    type: mongoose.Schema.Types.String,
-    ref: 'User',
-    required: true,
-  },
-  items: [String],
-  address: String,
-  contact: String,
-  locality: {
-    type: String,
-    required: true,
-  },
-  expirationTime: Date,
-  image: String,
+  donorName: { type: String, required: true },
+  donorEmail: { type: String, required: true },
+  donorPhone: { type: String, required: true },
+  donorAddress: { type: String, required: true },
+  locality: { type: String, required: true },
+  items: [itemSchema],
+  dateTime: { type: Date, required: true },
+  imageUrls: [String],
 }, { timestamps: true });
 
 module.exports = mongoose.model('Donation', donationSchema);

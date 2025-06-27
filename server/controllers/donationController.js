@@ -1,40 +1,50 @@
 const Donation = require('../models/Donation');
-const User = require('../models/User');
 
+// POST /api/donations
 exports.createDonation = async (req, res) => {
   try {
-    const user = await User.findOne({ mobile: req.user.mobile });
+    const {
+      donorName,
+      donorEmail,
+      donorPhone,
+      donorAddress,
+      locality,
+      items,
+      dateTime,
+    } = req.body;
 
-    const { items, address, contact, locality, expirationTime, image } = req.body;
+    const imageUrls = req.files.map(file => `/uploads/${file.filename}`);
 
     const newDonation = new Donation({
-      donor: user.mobile,
-      items,
-      address,
-      contact,
+      donorName,
+      donorEmail,
+      donorPhone,
+      donorAddress,
       locality,
-      expirationTime,
-      image,
+      items: JSON.parse(items),
+      dateTime,
+      imageUrls,
     });
 
     await newDonation.save();
-    res.status(201).json(newDonation);
+    res.status(201).json({ message: 'Donation submitted successfully' });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error('Error creating donation:', err);
+    res.status(500).json({ message: 'Failed to create donation' });
   }
 };
 
-exports.getValidDonations = async (req, res) => {
-  const { area } = req.query;
-
+// GET /api/donations
+exports.getDonations = async (req, res) => {
   try {
+    const now = new Date();
     const donations = await Donation.find({
-      expirationTime: { $gt: new Date() },
-      locality: area,
-    });
+      dateTime: { $gt: now }
+    }).sort({ createdAt: -1 });
 
     res.json(donations);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error('Error fetching donations:', err);
+    res.status(500).json({ message: 'Failed to fetch donations' });
   }
 };

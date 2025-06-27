@@ -3,66 +3,58 @@ import { useParams } from 'react-router-dom';
 import './Profile.css';
 
 const Profile = () => {
-  const { id } = useParams(); // profile user ID
+  const { id } = useParams();
   const currentUserId = localStorage.getItem('userId');
   const isOwnProfile = id === currentUserId;
 
   const [profile, setProfile] = useState({
-    name: '',
-    address: '',
-    bio: '',
-    profilePhoto: '/default-photo.png',
-    stars: 4
+    name: 'Laxmi Sravya Setty',
+    age: 22,
+    location: 'Hyderabad, India',
+    bio: `I am an allround web developer. I love creating user-friendly applications and have a strong passion for frontend development using the MERN stack.`,
+    profilePhoto: 'https://cdn-icons-png.flaticon.com/512/194/194938.png',
   });
 
   useEffect(() => {
-    // TODO: Replace with actual API call
-    // axios.get(`/api/users/${id}`).then(res => setProfile(res.data));
+    // You can fetch real user data here using the id from the URL
   }, [id]);
+
+  const handleSignOut = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    window.location.href = '/login';
+  };
 
   return (
     <div className="profile-container">
-      <div className="profile-header">
-        <div className="dropdown-wrapper">
-          <img src={profile.profilePhoto} alt="Profile" className="profile-pic" />
+      <h1>Hello!</h1>
+      <p className="subtitle">I'm a creative MERN stack web developer</p>
+
+      <div className="profile-content">
+        <div className="profile-left">
+          <img src={profile.profilePhoto} alt="Profile" className="profile-image" />
+        </div>
+
+        <div className="profile-right">
+          <div className="about-me">
+            <h2>About me</h2>
+            <p>{profile.bio}</p>
+          </div>
+
+          <div className="details">
+            <h2>Details</h2>
+            <p><strong>Name:</strong> {profile.name}</p>
+            <p><strong>Age:</strong> {profile.age} years</p>
+            <p><strong>Location:</strong> {profile.location}</p>
+          </div>
+
+         
           {isOwnProfile && (
-            <div className="dropdown">
-              <button className="dropbtn">⋮</button>
-              <div className="dropdown-content">
-                <a href="/change-password">Change Password</a>
-                <a href="/edit-profile">Edit Details</a>
-              </div>
-            </div>
+            <button className="signout-btn" onClick={handleSignOut}>
+              Sign Out
+            </button>
           )}
         </div>
-      </div>
-
-      <div className="profile-main">
-        <div className="profile-photo-box">
-          <img src={profile.profilePhoto} alt="Profile" className="profile-photo" />
-          <p>{profile.name}</p>
-          <p>{profile.address}</p>
-        </div>
-
-        <div className="bio-box">
-          <h2>Bio</h2>
-          <p>{profile.bio}</p>
-        </div>
-
-        <div className="stars-box">
-          <h3>Review Stars</h3>
-          <p>{'★'.repeat(profile.stars)}{'☆'.repeat(5 - profile.stars)}</p>
-        </div>
-
-        {isOwnProfile && (
-          <button className="signout-btn" onClick={() => {
-            localStorage.removeItem('token');
-            localStorage.removeItem('userId');
-            window.location.href = '/login';
-          }}>
-            Sign Out
-          </button>
-        )}
       </div>
     </div>
   );
