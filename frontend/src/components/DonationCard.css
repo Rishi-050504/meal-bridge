@@ -1,0 +1,56 @@
+.donation-card {
+  background-color: var(--color-light);
+  border: 1px solid var(--color-grey);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.donation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  border-color: var(--color-primary);
+}
+
+.card-image-container {
+  width: 100%;
+  padding-top: 66.66%; /* 3:2 Aspect Ratio */
+  position: relative;
+}
+
+.card-image-container .card-img-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.donation-card .card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.donation-card .card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.donation-card .card-text {
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.donation-card .donor-name {
+    font-style: italic;
+    color: #495057;
+    margin-top: auto;
+    padding-top: 1rem;
+}
