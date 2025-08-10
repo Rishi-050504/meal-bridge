@@ -2,7 +2,7 @@ const Donation = require('../models/Donation');
 const cloudinary = require('cloudinary').v2;
 const nodemailer = require('nodemailer');
 
-// Create a new donation
+
 const createDonation = async (req, res) => {
     try {
         const { locality, items, donorName, donorMobile, donorEmail, donorAddress } = req.body;
@@ -11,37 +11,37 @@ const createDonation = async (req, res) => {
             return res.status(400).json({ message: 'Please upload an image of the food.' });
         }
 
-        // Basic validation
+        
         if (!locality || !items || !donorName || !donorMobile || !donorEmail || !donorAddress) {
             return res.status(400).json({ message: 'Please fill all required fields.' });
         }
         
         const newDonation = new Donation({
             locality,
-            items: JSON.parse(items), // Parse the items array from JSON string
+            items: JSON.parse(items), 
             donorName,
             donorMobile,
             donorEmail,
             donorAddress,
-            foodImage: req.file.path // Get the image URL from Cloudinary
+            foodImage: req.file.path 
         });
 
         const savedDonation = await newDonation.save();
         res.status(201).json(savedDonation);
     } catch (error) {
-        // Enhanced error logging
+        
         console.error("ERROR CREATING DONATION:", error);
         res.status(500).json({ message: 'Server Error: ' + error.message });
     }
 };
 
-// Get all donations
+
 const getDonations = async (req, res) => {
     try {
         const { locality } = req.query;
         const filter = {};
         if (locality) {
-            filter.locality = new RegExp(locality, 'i'); // Case-insensitive search
+            filter.locality = new RegExp(locality, 'i'); 
         }
         const donations = await Donation.find(filter).sort({ createdAt: -1 });
         res.status(200).json(donations);
